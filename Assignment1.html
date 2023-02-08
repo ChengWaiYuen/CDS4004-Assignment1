@@ -5,12 +5,11 @@
             let text = document.getElementById("textarea").value
             let textdata = text.split(",")
             const newspan = document.createElement("span")
-            newspan.innerText = textdata[0]
+            newspan.innerText = textdata[0]+"\n"
             if (textdata[1] == 1){newspan.style.color = "red"}
             else if (textdata[1] == 2){newspan.style.color = "black"}
             else if (textdata[1] == 3){newspan.style.color = "gray"}
             document.body.appendChild(newspan)
-            \n
                  }
         function BatchAdd() {
             let text = document.getElementById("textarea").value
@@ -18,12 +17,11 @@
             for (let i = 0; i < alltextdata.length; i++) {
                 let textdata = alltextdata[i].split(",")
                 const newspan = document.createElement("span")
-                newspan.innerText = textdata[0]
+                newspan.innerText = textdata[0]+"\n"
                 if (textdata[1] == 1){newspan.style.color = "red"}
                 else if (textdata[1] == 2){newspan.style.color = "black"}
                 else if (textdata[1] == 3){newspan.style.color = "gray"}
-                document.body.appendChild(newspan)
-                \n}}
+                document.body.appendChild(newspan)}}
             
                 
             
