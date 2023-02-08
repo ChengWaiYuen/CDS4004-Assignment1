@@ -2,6 +2,10 @@
 <head>
     <script>
         function Add() {
+            let text = document.getElementById("Add").value
+            let text1 = text.split(0,text.length-2)
+            let text2 = text.split(text.length-2)
+            span.textContent = text1
             alert("Sucess")
                  }
     </script>
