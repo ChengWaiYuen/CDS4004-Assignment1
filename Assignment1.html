@@ -3,9 +3,8 @@
     <script>
         function Add() {
             let text = document.getElementById("textarea").value
-            let text1 = text.split(",")
-            let text2 = text.split(",")
-            document.getElementById("ToDoList").innerHTML = text1
+            let text = text.split(",")
+            document.getElementById("ToDoList").innerHTML = text[0]
             
             alert("Sucess")
                  }
