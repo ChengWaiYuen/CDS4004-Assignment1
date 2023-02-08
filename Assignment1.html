@@ -5,8 +5,9 @@
             let text = document.getElementById("textarea").value
             let textdata = text.split(",")
             document.getElementById("ToDoList").innerHTML = textdata[0]
-            
-            alert("Sucess")
+            if (textdata[1] == 1){document.getElementById("ToDoList").style.color = "red"}
+            else if (textdata[1] == 2){document.getElementById("ToDoList").style.color = "black"}
+            else if (textdata[1] == 3){document.getElementById("ToDoList").style.color = "gray"}
                  }
     </script>
 </head>
