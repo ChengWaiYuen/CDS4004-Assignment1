@@ -1,12 +1,18 @@
 <html>
 <head>
     <script>
-        function Add() {alert("The button clicked by JavaScript onClick function")}
+        function Add() {
+            let text = document.getElementsByName("textarea").innerHTML
+            let text1 = text.split(0,text.length-2)
+            let text2 = text.split(text.length-2)
+            span.textContent = text1
+            alert("Sucess")
+                 )}
     </script>
 </head>
 <body>
     
-    <textarea id="taskarea" name="taskdata" rows="4" cols="50">
+    <textarea id="textarea" name="taskdata" rows="4" cols="50">
     </textarea>
     <br/>
     <button id="Add" type="button" onclick="Add()">Add</button>
