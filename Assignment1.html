@@ -30,7 +30,13 @@
                     "onclick",
                     "if (this.style.textDecoration =='line-through'){this.style.textDecoration ='initial'} else {this.style.textDecoration ='line-through'}")
                 newspan.setAttribute("ondblclick","this.remove()")
-                document.body.appendChild(newspan)}}
+                document.body.appendChild(newspan)
+            }}
+        
+        function ToggleCompleteTask() {
+            document.querySelectorAll("[style*='text-decoration: line-through']").style.display = 'block'
+        }
+            
 
     </script>
         
@@ -42,7 +48,7 @@
     <br/>
     <button id="Add" type="button" onclick="Add()">Add</button>
     <button id="BatchAdd" type="button" onclick="BatchAdd()">Batch Add</button>
-    <button id="ToggleCompleteTask" type="button">Toggle Complete Task</button>
+    <button id="ToggleCompleteTask" type="button" onclick="ToggleCompleteTask()>Toggle Complete Task</button>
     <br/>
     <br/>      
 
