@@ -15,8 +15,8 @@
         function BatchAdd() {
             let text = document.getElementById("textarea").value
             let alltextdata = text.split(",")
-            for (i in a):{
-                let textdata = text.split(",")
+            for (word in alltextdata):{
+                let textdata = word.split(",")
                 const newspan = document.createElement("span")
                 newspan.innerText = textdata[0]
                 if (textdata[1] == 1){newspan.style.color = "red"}
