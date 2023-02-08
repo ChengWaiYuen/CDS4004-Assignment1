@@ -4,10 +4,11 @@
         function Add() {
             let text = document.getElementById("textarea").value
             let textdata = text.split(",")
-            document.getElementById("ToDoList").innerHTML = textdata[0]
             const newspan = document.createElement("span")
             newspan.innerText = textdata[0]
-            newspan.style.color = "red"
+            if (textdata[1] == 1){newspan.style.color = "red"}
+            else if (textdata[1] == 2){newspan.style.color = "black"}
+            else if (textdata[1] == 3){newspan.style.color = "gray"}
             document.body.appendChild(newspan)
                  }
     </script>
@@ -21,11 +22,7 @@
     <button id="BatchAdd" type="button">Batch Add</button>
     <button id="ToggleCompleteTask" type="button">Toggle Complete Task</button>
     <br/>
-    <br/>
-    <span id = ToDoList>class CDS4004 ok
-    </span>
-
-        
+    <br/>      
 
 </body>
 </html>
