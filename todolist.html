@@ -1,0 +1,91 @@
+<html lang="en">
+<!-- feel free to revise this file -->
+
+<head>
+	<style>	
+		/*write your css rules here*/
+		
+		textarea {
+		  width:100%;
+		}
+
+		li {
+			font-size: 30px;
+		}
+		
+	</style>
+</head>
+
+<body>
+	<textarea id='text' rows="3" ></textarea> 
+	<br/>
+	<div class='divButton'>
+		<button id='btn_add' >Add</button>
+		<button id='btn_hide'>Toggle</button>
+	</div>
+
+	<ol id='order_list'>
+	</ol>	
+</body>
+
+	<script>
+	leftnumber = 0
+	
+	document.getElementById("btn_add").onclick = function(){add()}
+	document.getElementById("btn_hide").onclick = function(){hide()}
+
+	function add() {
+	
+	let text = document.getElementById("text").value
+	let splittextdata = text.split(";")
+	const OrderList = document.getElementById("order_list")
+	
+	for (let i = 0; i < splittextdata.length; i++){
+        let textdata = splittextdata[i].split(",")
+	    const newspan = document.createElement("span")
+	    newspan.innerText = leftnumber + "." + textdata[0]+"\n"
+	    if (textdata[1] == 1){newspan.style.color = "red"}
+	    else if (textdata[1] == 2){newspan.style.color = "black"}
+        else if (textdata[1] == 3){newspan.style.color = "gray"}
+	    OrderList.appendChild(newspan)
+		leftnumber = leftnumber + 1
+		}
+	}
+	
+	const OrderList = document.getElementById("order_list")
+	OrderList.addEventListener("click", click)
+	OrderList.addEventListener("dblclick", dblclick)
+	
+	function click(e) {
+	let target = e.target
+	
+	if (target.tagName == "SPAN"){
+	    if (target.style.textDecoration == 'line-through'){target.style.textDecoration = 'none'}
+	    else{target.style.textDecoration = 'line-through'}
+		}
+	}
+	
+	function dblclick(e) {
+	let target = e.target
+	if (target.tagName == "SPAN"){target.remove()}
+	}
+	
+	function hide(){
+    const linethroughspan = document.querySelectorAll("[style*='text-decoration: line-through']")	
+	const hiddenlinethroughspan = document.querySelectorAll("[style*='visibility: hidden']")
+	for (let i = 0; i < linethroughspan.length; i++){
+	if (hiddenlinethroughspan.length == 0){linethroughspan[i].style.visibility = "hidden"}
+	else {linethroughspan[i].style.visibility = "visible"}
+	
+	}}
+	
+	
+
+
+	
+	
+	
+		
+	</script>
+</html>
+
